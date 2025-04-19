@@ -1,13 +1,13 @@
 {
   "manifest_version": 3,
-  "name": "FocusMode UI",
+  "name": "focus",
   "version": "1.0",
-  "description": "A Chrome extension that simplifies distracting websites to improve focus and accessibility.",
+  "description": "Chrome extension that simplifies distracting websites to improve focus and accessibility.",
   "permissions": ["activeTab", "scripting", "storage"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "128": "hello_extensions.png"
+      "128": "cover.png"
     }
   },
   "background": {
