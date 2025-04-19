@@ -1,30 +1,51 @@
-// Keeps track of whether Focus Mode is currently enabled or not
 let focusModeEnabled = false;
 
-// Applies styles for Focus Mode
+// Apply styles for Focus Mode
 function applyFocusMode() {
-  // Increase the font size for better readability
-  document.body.style.fontSize = "18px";
-  
-  // Add a custom class that can apply high-contrast or simplified styling
-  document.body.classList.add("focus-high-contrast");
+  if (document.getElementById("focus-style")) return;
+
+  const style = document.createElement("style");
+  style.id = "focus-style";
+
+  style.innerHTML = `
+    @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap');
+
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+
+    img, video, iframe, aside, footer, nav {
+      display: none !important;
+    }
+
+    body, p, div, span, li, ul, ol, a, h1, h2, h3, h4, h5, h6, td, th {
+      font-family: 'Atkinson Hyperlegible', sans-serif !important;
+      font-size: 1.5rem !important;
+      line-height: 1.6 !important;
+      letter-spacing: 0.05em !important;
+      color: #111 !important;
+    }
+
+    body {
+      background: #fefefe !important;
+      margin: auto !important;
+      padding: 1rem !important;
+    }
+  `;
+
+  document.head.appendChild(style);
 }
 
-// Removes Focus Mode styles
+// Remove Focus Mode styles
 function removeFocusMode() {
-  // Reset the font size to default
-  document.body.style.fontSize = "";
-  
-  // Remove the custom focus mode class
-  document.body.classList.remove("focus-high-contrast");
+  const existingStyle = document.getElementById("focus-style");
+  if (existingStyle) existingStyle.remove();
 }
 
-// Toggles between enabling and disabling Focus Mode
+// Toggle Focus Mode
 function toggleFocusMode() {
-  // Flip the current state (true becomes false, false becomes true)
   focusModeEnabled = !focusModeEnabled;
-
-  // Apply or remove styles based on the new state
   if (focusModeEnabled) {
     applyFocusMode();
   } else {
@@ -32,8 +53,7 @@ function toggleFocusMode() {
   }
 }
 
-// Listen for messages sent from other parts of the extension (e.g., popup.js)
-// When a message with action "toggleFocusMode" is received, toggle the mode
+// Listen for toggle message from popup.js
 chrome.runtime.onMessage.addListener((msg) => {
   if (msg.action === "toggleFocusMode") {
     toggleFocusMode();
