@@ -1,53 +1,41 @@
-// Add an event listener to the button with id "toggle"
-// When clicked, it runs an async function
-document.getElementById("toggle").addEventListener("click", async () => {
-  // Get the current active tab in the current window
-  const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+// Keeps track of whether Focus Mode is currently enabled or not
+let focusModeEnabled = false;
 
-  // Inject and run the toggleFocusMode function in the context of the current tab
-  chrome.scripting.executeScript({
-    target: { tabId: tab.id }, // Specify the tab where the script will be run
-    function: toggleFocusMode, // Reference the function to be executed
-  });
-});
+// Applies styles for Focus Mode
+function applyFocusMode() {
+  // Increase the font size for better readability
+  document.body.style.fontSize = "18px";
+  
+  // Add a custom class that can apply high-contrast or simplified styling
+  document.body.classList.add("focus-high-contrast");
+}
 
-// This function toggles a custom style to make the page more "focus-friendly"
+// Removes Focus Mode styles
+function removeFocusMode() {
+  // Reset the font size to default
+  document.body.style.fontSize = "";
+  
+  // Remove the custom focus mode class
+  document.body.classList.remove("focus-high-contrast");
+}
+
+// Toggles between enabling and disabling Focus Mode
 function toggleFocusMode() {
-  // Check if the style element already exists
-  const existingStyle = document.getElementById("focus-style");
+  // Flip the current state (true becomes false, false becomes true)
+  focusModeEnabled = !focusModeEnabled;
 
-  if (existingStyle) {
-    // If the style exists, remove it (turn off Focus Mode)
-    existingStyle.remove();
+  // Apply or remove styles based on the new state
+  if (focusModeEnabled) {
+    applyFocusMode();
   } else {
-    // If not, create a new <style> element
-    const style = document.createElement("style");
-    style.id = "focus-style"; // Give it an ID so we can find/remove it later
-
-    // Define CSS rules for Focus Mode
-    style.innerHTML = `
-      *\{
-        animation: none !important;
-        transition: none !important;
-      }
-      img, video, iframe, aside, footer, nav {
-        display: none !important; /* Hide distractions */
-      }
-      body {
-        background: #fefefe !important; /* Light background */
-        font-size: 1.5rem !important;  /* Larger text for readability */
-        line-height: 1.6 !important;    /* More spacing between lines */
-        color: #111 !important;         /* Darker text color */
-        /*max-width: 700px;*/               /* Limit line length */
-        margin: auto;                   /* Center content */
-        padding: 1rem;                  /* Add some spacing */
-      }
-    `;
-
-    // Add the style to the page <head>
-    document.head.appendChild(style);
+    removeFocusMode();
   }
 }
 
-
-
+// Listen for messages sent from other parts of the extension (e.g., popup.js)
+// When a message with action "toggleFocusMode" is received, toggle the mode
+chrome.runtime.onMessage.addListener((msg) => {
+  if (msg.action === "toggleFocusMode") {
+    toggleFocusMode();
+  }
+});
