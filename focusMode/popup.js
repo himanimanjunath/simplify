@@ -1,3 +1,31 @@
+const sendMessage = (action) => {
+  chrome.tabs.query({ active: true, currentWindow: true }, ([tab]) => {
+    chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      func: changeTextSize,
+      args: [action]
+    });
+  });
+};
+
+const changeTextSize = (action) => {
+  const elements = document.querySelectorAll('*'); // Select all elements
+
+  elements.forEach(el => {
+    const style = window.getComputedStyle(el);
+    const currentSize = parseFloat(style.fontSize);
+    
+    if (isNaN(currentSize)) return;
+
+    if (action === 'increase') {
+      el.style.fontSize = (currentSize + 2) + 'px';
+    } else if (action === 'decrease') {
+      el.style.fontSize = (currentSize - 2) + 'px';
+    } else {
+      el.style.fontSize = ''; // reset to default
+    }
+  });
+};
 // Add an event listener to the button with id "toggle"
 // When clicked, it runs an async function
 document.getElementById("toggle").addEventListener("click", async () => {
@@ -48,3 +76,6 @@ function toggleFocusMode() {
     document.head.appendChild(style);
   }
 }
+document.getElementById('increase').onclick = () => sendMessage('increase');
+document.getElementById('decrease').onclick = () => sendMessage('decrease');
+document.getElementById('reset').onclick = () => sendMessage('reset');
