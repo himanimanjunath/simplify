@@ -1,93 +1,43 @@
+// Keeps track of whether Focus Mode is currently enabled or not
 let focusModeEnabled = false;
 
-// Utility: Remove elements by selector
-function removeElements(selectors) {
-  selectors.forEach(selector => {
-    document.querySelectorAll(selector).forEach(el => el.remove());
-  });
-}
-
-// Utility: Simplify styles
-function applySimpleStyles() {
-  document.body.style.fontSize = "18px";
-  document.body.style.lineHeight = "1.6";
-  document.body.style.backgroundColor = "#fefefe";
-  document.body.style.color = "#111";
-  document.body.style.maxWidth = "700px";
-  document.body.style.margin = "auto";
-  document.body.style.padding = "1rem";
-}
-
-// CNN-specific cleanup
-function simplifyCNN() {
-  removeElements([
-    "header", "nav", "footer", ".ad", ".video", ".media", ".banner", 
-    ".breaking-news", ".metadata", ".nav", ".cnn_fade"
-  ]);
-  const mainContent = document.querySelector("main");
-  if (mainContent) {
-    document.body.innerHTML = "";
-    document.body.appendChild(mainContent);
-    applySimpleStyles();
-  }
-}
-
-// Amazon-specific cleanup
-function simplifyAmazon() {
-  removeElements([
-    "#nav-main", "#navFooter", "#navbar", ".nav-right", ".nav-left", 
-    ".ad", ".s-ads", ".s-main-slot .s-result-item:not(.AdHolder)", 
-    "#sponsoredProducts_feature_div", ".a-carousel", ".a-size-small"
-  ]);
-
-  // Enlarge product names and prices
-  document.querySelectorAll(".a-size-medium, .a-price").forEach(el => {
-    el.style.fontSize = "20px";
-    el.style.lineHeight = "1.6";
-  });
-
-  applySimpleStyles();
-}
-
-// Generic fallback simplification
-function genericSimplify() {
-  removeElements(["nav", "footer", "aside", "iframe", "video", "img", ".ad"]);
-  applySimpleStyles();
-}
-
-// Focus mode apply
+// Applies styles for Focus Mode
 function applyFocusMode() {
-  const hostname = window.location.hostname;
-
-  if (hostname.includes("cnn.com")) {
-    simplifyCNN();
-  } else if (hostname.includes("amazon.com")) {
-    simplifyAmazon();
-  } else {
-    genericSimplify();
-  }
-
-  focusModeEnabled = true;
+  // Increase the font size for better readability
+  document.body.style.fontSize = "18px";
+  
+  // Add a custom class that can apply high-contrast or simplified styling
+  document.body.classList.add("focus-high-contrast");
 }
 
-// Focus mode remove (refresh to restore)
+// Removes Focus Mode styles
 function removeFocusMode() {
-  alert("Reload the page to restore original view.");
-  focusModeEnabled = false;
+  // Reset the font size to default
+  document.body.style.fontSize = "";
+  
+  // Remove the custom focus mode class
+  document.body.classList.remove("focus-high-contrast");
 }
 
-// Toggle handler
+// Toggles between enabling and disabling Focus Mode
 function toggleFocusMode() {
+  // Flip the current state (true becomes false, false becomes true)
+  focusModeEnabled = !focusModeEnabled;
+
+  // Apply or remove styles based on the new state
   if (focusModeEnabled) {
-    removeFocusMode();
-  } else {
     applyFocusMode();
+  } else {
+    removeFocusMode();
   }
 }
 
-// Message listener
+// Listen for messages sent from other parts of the extension (e.g., popup.js)
+// When a message with action "toggleFocusMode" is received, toggle the mode
 chrome.runtime.onMessage.addListener((msg) => {
   if (msg.action === "toggleFocusMode") {
     toggleFocusMode();
   }
 });
+
+
