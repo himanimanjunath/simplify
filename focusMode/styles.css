@@ -1,29 +1,30 @@
 body {
-    font-family: Verdana;
+    font-family: sans-serif;
     padding: 10px;
     margin: 0;
-    width: 200px;
+    width: 150px;
     height: 100%;
     border: none;
-    background-color: #F9F7EA;
+    background-color: white;
   }
   
   h2 {
-
-    font-size: 1.2rem;
+    text-align: center;
+    font-size: 28px;
     margin-top: 0;
     margin-bottom: 10px;
-    color: #433E3F;
+    color: #353132;
   }
   
   button {
     padding: 10px;
-    font-size: 16px;
-    background-color: #818EB1;
-    color: #F9F7EA;
+    font-size: 20px;
+    background-color: #7785AC;
+    color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 10px;
     cursor: pointer;
     width: 100%;
   }
+
   
