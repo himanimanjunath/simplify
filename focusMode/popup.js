@@ -26,7 +26,7 @@ function toggleFocusMode() {
 
     // Define CSS rules for Focus Mode
     style.innerHTML = `
-      * {
+      *\{
         animation: none !important;
         transition: none !important;
       }
@@ -35,10 +35,10 @@ function toggleFocusMode() {
       }
       body {
         background: #fefefe !important; /* Light background */
-        font-size: 1.15rem !important;  /* Larger text for readability */
+        font-size: 1.5rem !important;  /* Larger text for readability */
         line-height: 1.6 !important;    /* More spacing between lines */
         color: #111 !important;         /* Darker text color */
-        max-width: 700px;               /* Limit line length */
+        /*max-width: 700px;*/               /* Limit line length */
         margin: auto;                   /* Center content */
         padding: 1rem;                  /* Add some spacing */
       }
