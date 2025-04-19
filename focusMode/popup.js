@@ -1,81 +1,8 @@
-const sendMessage = (action) => {
-  chrome.tabs.query({ active: true, currentWindow: true }, ([tab]) => {
-    chrome.scripting.executeScript({
-      target: { tabId: tab.id },
-      func: changeTextSize,
-      args: [action]
-    });
-  });
-};
-
-const changeTextSize = (action) => {
-  const elements = document.querySelectorAll('*'); // Select all elements
-
-  elements.forEach(el => {
-    const style = window.getComputedStyle(el);
-    const currentSize = parseFloat(style.fontSize);
-    
-    if (isNaN(currentSize)) return;
-
-    if (action === 'increase') {
-      el.style.fontSize = (currentSize + 2) + 'px';
-    } else if (action === 'decrease') {
-      el.style.fontSize = (currentSize - 2) + 'px';
-    } else {
-      el.style.fontSize = ''; // reset to default
-    }
-  });
-};
-// Add an event listener to the button with id "toggle"
-// When clicked, it runs an async function
+// Listen for clicks on the toggle button
 document.getElementById("toggle").addEventListener("click", async () => {
-  // Get the current active tab in the current window
+  // Get the current active tab
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
-  // Inject and run the toggleFocusMode function in the context of the current tab
-  chrome.scripting.executeScript({
-    target: { tabId: tab.id }, // Specify the tab where the script will be run
-    function: toggleFocusMode, // Reference the function to be executed
-  });
+  // Send a message to the content script to toggle Focus Mode
+  chrome.tabs.sendMessage(tab.id, { action: "toggleFocusMode" });
 });
-
-// This function toggles a custom style to make the page more "focus-friendly"
-function toggleFocusMode() {
-  // Check if the style element already exists
-  const existingStyle = document.getElementById("focus-style");
-
-  if (existingStyle) {
-    // If the style exists, remove it (turn off Focus Mode)
-    existingStyle.remove();
-  } else {
-    // If not, create a new <style> element
-    const style = document.createElement("style");
-    style.id = "focus-style"; // Give it an ID so we can find/remove it later
-
-    // Define CSS rules for Focus Mode
-    style.innerHTML = `
-      *\{
-        animation: none !important;
-        transition: none !important;
-      }
-      img, video, iframe, aside, footer, nav {
-        display: none !important; /* Hide distractions */
-      }
-      body {
-        background: #fefefe !important; /* Light background */
-        font-size: 1.5rem !important;  /* Larger text for readability */
-        line-height: 1.6 !important;    /* More spacing between lines */
-        color: #111 !important;         /* Darker text color */
-        /*max-width: 700px;*/               /* Limit line length */
-        margin: auto;                   /* Center content */
-        padding: 1rem;                  /* Add some spacing */
-      }
-    `;
-
-    // Add the style to the page <head>
-    document.head.appendChild(style);
-  }
-}
-document.getElementById('increase').onclick = () => sendMessage('increase');
-document.getElementById('decrease').onclick = () => sendMessage('decrease');
-document.getElementById('reset').onclick = () => sendMessage('reset');
