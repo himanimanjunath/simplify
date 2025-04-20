@@ -27,6 +27,7 @@ A Chrome extension to help neurodivergent users (ADHD, autism) and anyone prone 
 
 ---
 
-Made with 💚 at HackDavis 2025
+Made with 💚 at HackDavis 2025 
+#hacking at hackdavis
 
 
