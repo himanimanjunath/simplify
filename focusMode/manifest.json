@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "focus",
   "version": "1.0",
-  "description": "Chrome extension that simplifies distracting websites to improve focus and accessibility.",
+  "description": "Simplifying distracting websites to improve accessibility for users with ADHD and autism.",
   "permissions": ["activeTab", "scripting", "storage"],
   "action": {
     "default_popup": "popup.html",
