@@ -1,8 +1,8 @@
-// Listen for clicks on the toggle button
+// listen for clicks on toggle button
 document.getElementById("toggle").addEventListener("click", async () => {
-  // Get the current active tab
+  // get the current active tab
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
-  // Send a message to the content script to toggle Focus Mode
+  // send message to the content script to toggle focus mode
   chrome.tabs.sendMessage(tab.id, { action: "toggleFocusMode" });
 });
