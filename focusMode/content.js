@@ -1,6 +1,6 @@
 let focusModeEnabled = false;
 
-// Apply styles for Focus Mode
+// styles for focus mode
 function applyFocusMode() {
   if (document.getElementById("focus-style")) return;
 
