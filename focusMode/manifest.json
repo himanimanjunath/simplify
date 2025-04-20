@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "focus",
+  "name": "simplify",
   "version": "1.0",
   "description": "Simplifying distracting websites to improve accessibility for users with ADHD and autism.",
   "permissions": ["activeTab", "scripting", "storage"],
