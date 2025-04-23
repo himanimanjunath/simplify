@@ -1,4 +1,4 @@
-# simplify ✨
+# simplify 📄✨
 
 A Chrome extension to help neurodivergent users (ADHD, autism) and anyone prone to distraction focus better while browsing the web.
 
