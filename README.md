@@ -24,11 +24,6 @@ A Chrome extension to help neurodivergent users (ADHD, autism) and anyone prone 
 - Grayscale / high contrast mode 
 - Expand dyslexia-friendly font options
 
----
-
-Made with 💚 at HackDavis 2025 
-
----
 
 **Privacy Policy for Simplify**
 
@@ -39,3 +34,7 @@ All functionality takes place locally on the user’s device. No information is 
 We do not access or track browsing history, user activity, or website content. Any settings (such as font size) are only applied to the page visually and are not stored or transmitted unless saved locally using Chrome’s storage system.
 
 If we ever change this policy, updates will be reflected here.
+
+---
+
+Made with 💚 at HackDavis 2025 
