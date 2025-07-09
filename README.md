@@ -9,7 +9,9 @@ Chrome extension built to create a cleaner, distraction-free web experience! Des
 * Clean, readable layout  
 
 ## How We Built It
-* For the frontend UI, we used HTML, CSS, and JavaScript to build the popup interface. The Chrome Extensions API (Manifest v3) was used to define the extension's structure/permissions, handle communication between the popup and browser tabs, register content scripts, and handle user interaction. We used content scripting to modify the actual content of the webpages (changing fonts, disabling distractions, etc). These scripts are injected into specific websites and run in the context of the page, enabling direct DOM manipulation in real time.
+* For the frontend UI, we used HTML, CSS, and JavaScript to build the popup interface.
+* The Chrome Extensions API (Manifest v3) was used to define the extension's structure/permissions, handle communication between the popup and browser tabs, register content scripts, and handle user interaction.
+* We used content scripting to modify the actual content of the webpages (changing fonts, disabling distractions, etc). These scripts are injected into specific websites and run in the context of the page, enabling direct DOM manipulation in real time.
 
 ## How It Works
 * A popup interface allows users to toggle features
@@ -21,10 +23,10 @@ This project was our first Chrome extension and first hackathon experience. We l
 * How Chrome Extensions work from scratch
 * Effective teamwork and project collaboration
 * Problem-solving under time pressure
-* Reaching out to mentors/sponsors and applying their feedback
+* Reaching out to mentors/sponsors for help and applying their feedback
 * How to laugh and cry over bugs together
 
-When we hit walls while working (like unhiding cnn.com’s header), the help we received from our hackathon sponsors and directors was technically valuable and genuinely inspiring.
+When we hit walls while working (like unhiding cnn.com’s header), the help we received from our hackathon sponsors and directors was technically valuable and inspiring.
 
 ## Getting Started
 1. Clone this repo
