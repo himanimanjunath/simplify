@@ -1,6 +1,6 @@
 # simplify 
 
-Chrome extension designed to create a cleaner, distraction-free web experience! Designed especially for neurodivergent users such as those with ADHD or autism. Our extension modifies webpages by changing fonts, disabling visual clutter, and offering a more accessible reading interface. Currently, it’s optimized for cnn.com.
+Chrome extension built to create a cleaner, distraction-free web experience! Designed especially for neurodivergent users such as those with ADHD or autism. Our extension modifies webpages by changing fonts, disabling visual clutter, and offering a more accessible reading interface. Currently, it’s optimized for cnn.com.
 
 ## Features
 * Dyslexia-friendly font
