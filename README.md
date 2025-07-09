@@ -9,9 +9,9 @@ Chrome extension built to create a cleaner, distraction-free web experience! Des
 * Clean, readable layout  
 
 ## How We Built It
-* For the frontend UI, we used HTML, CSS, and JavaScript to build the popup interface.
-* The Chrome Extensions API (Manifest v3) was used to define the extension's structure/permissions, handle communication between the popup and browser tabs, register content scripts, and handle user interaction.
-* We used content scripting to modify the actual content of the webpages (changing fonts, disabling distractions, etc). These scripts are injected into specific websites and run in the context of the page, enabling direct DOM manipulation in real time.
+* For the frontend UI, we used * HTML, CSS, and JavaScript * to build the popup interface.
+* The * Chrome Extensions API (Manifest v3) * was used to define the extension's structure/permissions, handle communication between the popup and browser tabs, register content scripts, and handle user interaction.
+* We used * content scripting * to modify the actual content of the webpages (changing fonts, disabling distractions, etc). 
 
 ## How It Works
 * A popup interface allows users to toggle features
@@ -28,7 +28,7 @@ This project was our first Chrome extension and first hackathon experience. We l
 
 When we hit walls while working (like unhiding cnn.com’s header), the help we received from our hackathon sponsors and directors was technically valuable and inspiring.
 
-## Getting Started
+## Try It Out
 1. Clone this repo
 2. Open `chrome://extensions`
 3. Enable **Developer Mode**
