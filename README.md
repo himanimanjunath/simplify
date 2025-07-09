@@ -9,9 +9,9 @@ Chrome extension built to create a cleaner, distraction-free web experience! Des
 * Clean, readable layout  
 
 ## How We Built It
-* For the frontend UI, we used * HTML, CSS, and JavaScript * to build the popup interface.
-* The * Chrome Extensions API (Manifest v3) * was used to define the extension's structure/permissions, handle communication between the popup and browser tabs, register content scripts, and handle user interaction.
-* We used * content scripting * to modify the actual content of the webpages (changing fonts, disabling distractions, etc). 
+* For the frontend UI, we used **HTML, CSS, and JavaScript** to build the popup interface.
+* The **Chrome Extensions API (Manifest v3)** was used to define the extension's structure/permissions, handle communication between the popup and browser tabs, register content scripts, and handle user interaction.
+* We used **content scripting** to modify the actual content of the webpages (changing fonts, disabling distractions, etc). 
 
 ## How It Works
 * A popup interface allows users to toggle features
