@@ -23,13 +23,13 @@ This project was our first Chrome extension and first hackathon experience. We l
 
 When we hit walls while working (like unhiding cnn.com’s header), the help we received from our hackathon sponsors and directors was technically valuable and inspiring.
 
-## Try It Out
+## Try It Out!
 1. Clone this repo
 2. Open `chrome://extensions`
 3. Enable **Developer Mode**
 4. Click **Load unpacked**
 5. Select this folder
-6. Click the extension icon → try toggling simplify
+6. Click the extension icon → try out simplify :)
 
 ### Planned Features
 * Per-site customization
