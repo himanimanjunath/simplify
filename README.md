@@ -2,6 +2,9 @@
 
 Chrome extension built to create a cleaner, distraction-free web experience! Designed especially for neurodivergent users such as those with ADHD or autism. Our extension modifies webpages by disabling visual clutter, changing fonts, and offering larger text sizes. Currently, it’s optimized for cnn.com.
 
+<img width="1433" height="751" alt="Screenshot 2025-04-28 at 11 09 31 PM" src="https://github.com/user-attachments/assets/b92c9eea-8df4-4e6c-b874-1ba637dbbec3" />
+
+
 <img width="1436" height="750" alt="Screenshot 2025-04-28 at 11 09 40 PM" src="https://github.com/user-attachments/assets/004ddc54-c430-41d6-8b75-b8b4cc87f986" />
 
 ## Extension Features
@@ -57,6 +60,12 @@ With the limited time we had, we focused on delivering these keypoints through o
 * For the frontend UI, we used **HTML, CSS, and JavaScript** to build the popup interface.
 * Used **content scripting** to modify the actual content of the webpages (changing fonts, increase line/letter spacing, disable ads/autoplay, enforce color schemes). 
 * The **Chrome Extensions API (Manifest v3)** was used for the extension's structure/permissions, enable communication between the popup and browser tabs, register content scripts, and handle user interaction.
+
+<img width="1731" height="509" alt="simplify (2) copy" src="https://github.com/user-attachments/assets/d2b2eb09-7893-4d75-8d39-cab4d85ee01b" />
+
+
+## Impact 
+By the end of our sprint, we had a usable product. After a few refinements, we published our extension to the Chrome Web Store, where it gained over 50 users within three months. This early traction demonstrates both the demand for distraction-free browsing tools and the potential for our solution to grow beyond the initial prototype.
 
 ## What We Learned
 This project was our first Chrome extension and first hackathon experience. We learned: 
