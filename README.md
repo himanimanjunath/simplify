@@ -2,9 +2,6 @@
 
 Chrome extension built to create a cleaner, distraction-free web experience! Designed especially for neurodivergent users such as those with ADHD or autism. Our extension modifies webpages by disabling visual clutter, changing fonts, and offering larger text sizes. Currently, it’s optimized for cnn.com.
 
-<img width="1433" height="751" alt="Screenshot 2025-04-28 at 11 09 31 PM" src="https://github.com/user-attachments/assets/b92c9eea-8df4-4e6c-b874-1ba637dbbec3" />
-
-
 <img width="1436" height="750" alt="Screenshot 2025-04-28 at 11 09 40 PM" src="https://github.com/user-attachments/assets/004ddc54-c430-41d6-8b75-b8b4cc87f986" />
 
 ## Extension Features
