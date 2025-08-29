@@ -10,7 +10,7 @@ Chrome extension built to create a cleaner, distraction-free web experience! Des
 * Easy toggle via popup  
 * Clean, readable layout  
 
-## Project Timeline
+### Project Timeline
 April 2025 (24-hour programming sprint)
 
 ## Context
@@ -21,7 +21,7 @@ People with ADHD, autism, or cognitive processing challenges often struggle with
 ## Objective
 Our goal was to create a Chrome extension that would clean up cluttered websites for a distraction free web-experience.
 
-## Key Findings
+### Key Findings
 Addressing the smallest details in design would make the biggest difference for our users.
 
 Issues that users with ADHD and autism face with current web-pages include:
@@ -44,7 +44,7 @@ With the limited time we had, we focused on delivering these keypoints through o
 3. **Build & Test**: Tailored our extension for CNN.com, simplifying layout and reducing overload.
 4. **Scale**: Found that the same design principles worked seamlessly across other sites → our solution became scalable / broadly applicable.
 
-## Key design considerations
+### Key design considerations
 - **Line height**: Increased to 1.5–1.75 (vs. standard web default 1.2–1.4) → ideal for  ADHD/autistic users: reduces visual crowding, helps track reading
 - **Letter spacing**: Slightly wider → prevents word “clumping,” improves legibility
 - **Distraction reduction**: Removed ads, autoplay videos, and excessive images
@@ -58,7 +58,7 @@ With the limited time we had, we focused on delivering these keypoints through o
 * Used **content scripting** to modify the actual content of the webpages (changing fonts, increase line/letter spacing, disable ads/autoplay, enforce color schemes). 
 * The **Chrome Extensions API (Manifest v3)** was used for the extension's structure/permissions, enable communication between the popup and browser tabs, register content scripts, and handle user interaction.
 
-## What We Learned
+### What We Learned
 This project was our first Chrome extension and first hackathon experience. We learned: 
 * How Chrome Extensions work from scratch
 * Effective teamwork and project collaboration
