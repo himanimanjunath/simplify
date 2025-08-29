@@ -51,7 +51,7 @@ With the limited time we had, we focused on delivering these keypoints through o
 - **Color choices**: Simple black text on white background → fewer sensory triggers
 - **Font**: Chose a dyslexia-friendly typeface (Atkinson Hyperlegible)
 
-<img width="1000" height="1080" alt="simplify (2)" src="https://github.com/user-attachments/assets/6c8a61d8-89e3-4b09-bc22-65597d30a83d" />
+<img width="1000" height="1000" alt="simplify (2)" src="https://github.com/user-attachments/assets/6c8a61d8-89e3-4b09-bc22-65597d30a83d" />
 
 ## How We Built It
 * For the frontend UI, we used **HTML, CSS, and JavaScript** to build the popup interface.
