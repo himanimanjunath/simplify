@@ -5,7 +5,8 @@ Chrome extension built to create a cleaner, distraction-free web experience. Des
 <img width="1436" height="750" alt="Screenshot 2025-04-28 at 11 09 40 PM" src="https://github.com/user-attachments/assets/004ddc54-c430-41d6-8b75-b8b4cc87f986" />
 
 
-Timeline: April 2025 (24-hour programming sprint)
+## Timeline: 
+April 2025 (24-hour programming sprint)
 
 ## Context
 As a first time participant at HackDavis, two friends and I took on the challenge of improving the web-experience for neurodivergent users, especially those with ADHD or autism.
@@ -19,8 +20,8 @@ Our goal was to create a Chrome extension that would clean up cluttered websites
 Addressing the smallest details in design would make the biggest difference for our users.
 
 **Issues that users with ADHD and autism face with current web-pages include:**
-**Audiovisual overload**
-• 	Pop-up ads and moving images easily distract and overwhelm.
+- **Audiovisual overload**
+-   	Pop-up ads and moving images easily distract and overwhelm.
 **Overstimulation**
 •	Bright colors, flashing graphics, and complex layouts trigger sensory stress.
 **Unpredictable navigation**
