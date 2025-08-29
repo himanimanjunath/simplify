@@ -1,9 +1,14 @@
 # simplify 
 
-Chrome extension built to create a cleaner, distraction-free web experience. Designed especially for neurodivergent users such as those with ADHD or autism. Our extension modifies webpages by changing fonts, disabling visual clutter, and offering a more clean, readable interface. Currently, it’s optimized for cnn.com.
+Chrome extension built to create a cleaner, distraction-free web experience! Designed especially for neurodivergent users such as those with ADHD or autism. Our extension modifies webpages by disabling visual clutter, hanging fonts, and offering larger text sizes. Currently, it’s optimized for cnn.com.
 
 <img width="1436" height="750" alt="Screenshot 2025-04-28 at 11 09 40 PM" src="https://github.com/user-attachments/assets/004ddc54-c430-41d6-8b75-b8b4cc87f986" />
 
+## Features
+* Dyslexia-friendly font
+* Hides distracting elements (images, advertisements, videos, footers)  
+* Easy toggle via popup  
+* Clean, readable layout  
 
 ## Timeline: 
 April 2025 (24-hour programming sprint)
@@ -20,12 +25,9 @@ Our goal was to create a Chrome extension that would clean up cluttered websites
 Addressing the smallest details in design would make the biggest difference for our users.
 
 Issues that users with ADHD and autism face with current web-pages include:
-- **Audiovisual overload**
- - Pop-up ads and moving images easily distract and overwhelm.
-- **Overstimulation**
- - 	Bright colors, flashing graphics, and complex layouts trigger sensory stress.
-- **Unpredictable navigation**
- - Inconsistent or sudden layout changes can be confusing and make it hard to focus.
+- **Audiovisual overload**: Pop-up ads and moving images easily distract and overwhelm.
+- **Overstimulation**: Bright colors, flashing graphics, and complex layouts trigger sensory stress.
+- **Unpredictable navigation**: Inconsistent or sudden layout changes can be confusing and make it hard to focus.
 
 **Accessibility principles for neurodivergent users included:**
 - Easy-to-read typography
@@ -37,14 +39,10 @@ Issues that users with ADHD and autism face with current web-pages include:
 With the limited time we had, we focused on delivering these keypoints through our extension to users.
 
 ## Our process
-**1. Research**
- Looked at major sites (Amazon, CNN, Reddit, YouTube) to spot common pain points.
-**2. Focus**
-Narrowed focus to news sites (starting with CNN) → high traffic, frequent use.
-**3. Build & Test**
-Tailored our extension for CNN.com, simplifying layout and reducing overload.
-**4. Scale**
-Found that the same design principles worked seamlessly across other sites → our solution became scalable / broadly applicable.**
+1. **Research**: Looked at major sites (Amazon, CNN, Reddit, YouTube) to spot common pain points.
+2. **Focus**: Narrowed focus to news sites (starting with CNN) → high traffic, frequent use.
+3. **Build & Test**: Tailored our extension for CNN.com, simplifying layout and reducing overload.
+4. **Scale**: Found that the same design principles worked seamlessly across other sites → our solution became scalable / broadly applicable.**
 
 ## Key design considerations
 - **Line height**: Increased to 1.5–1.75 (vs. standard web default 1.2–1.4) → ideal for  ADHD/autistic users: reduces visual crowding, helps track reading
@@ -53,20 +51,12 @@ Found that the same design principles worked seamlessly across other sites → o
 - **Color choices**: Simple black text on white background → fewer sensory triggers
 - **Font**: Chose a dyslexia-friendly typeface (Atkinson Hyperlegible)
 
-<img width="1920" height="1080" alt="simplify (1)" src="https://github.com/user-attachments/assets/c6fcc273-5f25-4740-a8f4-ff3dbf52c57b" />
-
+<img width="1920" height="1080" alt="simplify (2)" src="https://github.com/user-attachments/assets/6c8a61d8-89e3-4b09-bc22-65597d30a83d" />
 
 ## How We Built It
 * For the frontend UI, we used **HTML, CSS, and JavaScript** to build the popup interface.
 * Used **content scripting** to modify the actual content of the webpages (changing fonts, increase line/letter spacing, disable ads/autoplay, enforce color schemes). 
 * The **Chrome Extensions API (Manifest v3)** was used for the extension's structure/permissions, enable communication between the popup and browser tabs, register content scripts, and handle user interaction.
-
-
-## Features
-* Dyslexia-friendly font
-* Hides distracting elements (images, advertisements, videos, footers)  
-* Easy toggle via popup  
-* Clean, readable layout  
 
 ## What We Learned
 This project was our first Chrome extension and first hackathon experience. We learned: 
